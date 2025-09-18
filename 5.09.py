@@ -1,14 +1,14 @@
 import unittest
 
 def sum(nums, target):
-    if type(target) is not int: return 'Nan'
+    if type(target) is not int: return 'None'
     for x in nums:
-        if type(x) is not int: return 'Nan'
+        if type(x) is not int: return 'None'
     for i in range(len(nums)):
         for j in range(i + 1, len(nums)):
             if nums[i] + nums[j] == target:
                 return [i, j]
-    return 'Nan'
+    return 'None'
 
 
 class Testsum(unittest.TestCase):
@@ -22,7 +22,7 @@ class Testsum(unittest.TestCase):
         self.assertEqual(sum([3,3], 6), [0,1])
 
     def test_no_solution(self):
-        self.assertEqual(sum([1,2,3], 7), 'Nan')
+        self.assertEqual(sum([1,2,3], 7), 'None')
 
     def test_negative_numbers(self):
         self.assertEqual(sum([-1, -2, -3, -4], -6), [1,3])
@@ -43,22 +43,23 @@ class Testsum(unittest.TestCase):
         self.assertEqual(sum([10, -10], 0), [0,1])
 
     def test_empty_nums(self):
-        self.assertEqual(sum([], 7), 'Nan')
+        self.assertEqual(sum([], 7), 'None')
 
     def test_1_nums(self):
-        self.assertEqual(sum([5], 5), 'Nan')
+        self.assertEqual(sum([5], 5), 'None')
 
     def test_float_nums(self):
-        self.assertEqual(sum([1, 2.5, 3], 5), 'Nan')
+        self.assertEqual(sum([1, 2.5, 3], 5), 'None')
 
     def test_float_targ(self):
-        self.assertEqual(sum([1, 2, 3], 5.0), 'Nan')
+        self.assertEqual(sum([1, 2, 3], 5.0), 'None')
 
     def test_str_nums(self):
-        self.assertEqual(sum([1, "a", 3], 4), 'Nan')
+        self.assertEqual(sum([1, "a", 3], 4), 'None')
 
     def test_str_targ(self):
-        self.assertEqual(sum([1, 2, 3], "6"), 'Nan')
+        self.assertEqual(sum([1, 2, 3], "6"), 'None')
 
 if __name__ == "__main__":
     unittest.main(argv=[''], verbosity=2, exit=False)
+
