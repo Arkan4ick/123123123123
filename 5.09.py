@@ -1,6 +1,6 @@
 import unittest
 
-
+""" Функция ищет пару в nums, дающую в сумме target. Выводит пару с минимальными индексами. При ошибке возвращает None """
 def sum(nums, target):
     if type(target) is not int: return None
     for x in nums:
@@ -70,3 +70,4 @@ class Testsum(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
